@@ -98,6 +98,8 @@ app.get('/', routes.core.home)
 app.get('/login', routes.auth.login)
 app.get('/register', routes.auth.register)
 app.get('/reset', routes.auth.reset)
+app.post('/login', routes.auth.loginUser)
+app.post('/register', routes.auth.registerUser)
 
 // Terms & Privacy
 app.get('/terms', routes.core.terms)

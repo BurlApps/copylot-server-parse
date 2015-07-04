@@ -4,7 +4,8 @@
   <div class="modal">
     <div class="message">Let's Get Workin!</div>
     <form action="/login">
-      <input type="text" class="input" name="email" placeholder="Email" step="1" autofocus required>
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <input type="text" class="input" name="email" placeholder="Email" value="<%= remember %>" step="1" autofocus required>
       <input type="password" class="input" name="password" placeholder="Password" step="2" required>
       <label class="remember">
         <input type="checkbox" class="checkbox" name="remember" value="true" checked="checked">

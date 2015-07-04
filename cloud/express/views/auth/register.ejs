@@ -3,10 +3,11 @@
   <div class="logo"><%= siteName %></div>
   <div class="modal">
     <div class="message">Let's Go Dynamic!</div>
-    <form action="/login">
+    <form action="/register">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
       <input type="text" class="input" name="email" placeholder="Email" step="1" autofocus required>
       <input type="password" class="input" name="password" placeholder="Password" step="2" required>
-      <input type="password" class="input" name="confirm-password" placeholder="Confirm Password" step="3" required>
+      <input type="password" class="input" name="password_confirm" placeholder="Confirm Password" step="3" required>
       <input type="submit" class="button" value="Create Account!">
     </form>
   </div>

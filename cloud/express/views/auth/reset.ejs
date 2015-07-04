@@ -7,7 +7,8 @@
       Enter your email address below and we'll<br>
       send you a link to reset your password.
     </div>
-    <form action="/login">
+    <form action="/reset">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
       <input type="text" class="input" name="email" placeholder="Email" step="1" autofocus required>
       <input type="submit" class="button" value="Send Email">
     </form>
