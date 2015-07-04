@@ -81,6 +81,8 @@ module.exports.loginUser = function(req, res) {
           maxAge: 900000,
           httpOnly: 604800000
         })
+      } else {
+        res.clearCookie('remember')
       }
 
   	  req.session.user = {
