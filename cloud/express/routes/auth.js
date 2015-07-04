@@ -150,8 +150,13 @@ module.exports.resetUser = function(req, res) {
 	  	})
     },
     error: function(error) {
-      console.log(error)
-      res.errorT("Something Went Wrong :(")
+      var message = "Something Went Wrong :("
+
+  	  if(error.code == 125) {
+    	  message = "Email Not Found :("
+  	  }
+
+      res.errorT(message)
     }
   })
 }
