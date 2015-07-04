@@ -19,6 +19,22 @@ switch(template) {
   case "auth/reset":
     title = "Reset Your Password"
     break
+
+  case "auth/resetPassword":
+    title = "Your New Password"
+    break
+
+  case "auth/resetSuccess":
+    title = "Password Was Updated"
+    break
+
+  case "auth/emailSuccess":
+    title = "Email Was Verified"
+    break
+
+  case "auth/expired":
+    title = "Expired Link"
+    break
 }
 
 titleOG = titleOG || title

@@ -41,6 +41,34 @@ module.exports.reset = function(req, res) {
   res.renderT('auth/reset')
 }
 
+module.exports.resetPassword = function(req, res) {
+  if(req.param("token") == null) {
+    //return res.redirect("/")
+  }
+
+  res.renderT('auth/resetPassword', {
+    appID: req.param("id"),
+    token: req.param("token"),
+    username: req.param("username")
+  })
+}
+
+module.exports.resetSuccess = function(req, res) {
+  res.renderT('auth/resetSuccess')
+}
+
+module.exports.emailSuccess = function(req, res) {
+  res.renderT('auth/emailSuccess')
+}
+
+module.exports.authRouter = function(req, res) {
+  res.redirect("https://www.parse.com" + req.param("link") + "?" + req.originalUrl.split("?")[1])
+}
+
+module.exports.expired = function(req, res) {
+  res.renderT('auth/expired')
+}
+
 module.exports.loginUser = function(req, res) {
   Parse.User.logIn(req.param("email"), req.param("password"), {
 	  success: function(user) {
@@ -104,5 +132,21 @@ module.exports.registerUser = function(req, res) {
 
       res.errorT(message)
 	  }
+  })
+}
+
+module.exports.resetUser = function(req, res) {
+  Parse.User.requestPasswordReset(req.param("email"), {
+    success: function() {
+      res.successT({
+        message: "Email Sent!",
+		  	next: "/",
+		  	delay: 5000
+	  	})
+    },
+    error: function(error) {
+      console.log(error)
+      res.errorT("Something Went Wrong :(")
+    }
   })
 }

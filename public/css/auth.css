@@ -17,7 +17,9 @@ body.auth_login {
   background-image: -ms-radial-gradient(closest-corner,rgba(16,47,70,0) 60%,rgba(16,47,70,0.26)),-ms-linear-gradient(108deg,#26d0ce,#1a2980 90%);
 }
 
-body.auth_register {
+body.auth_register,
+body.auth_emailSuccess,
+body.auth_expired {
   background: #1e1635;
   background: -webkit-linear-gradient(bottom right,#4cddff,#3b9aca 10%,#2d6ca5 20%,#2a5291 27%,#283d81 35%,#222654 50%,#1e1635 63%,#0c0010 93%,#000);
   background: -moz-linear-gradient(bottom right,#4cddff,#3b9aca 10%,#2d6ca5 20%,#2a5291 27%,#283d81 35%,#222654 50%,#1e1635 63%,#0c0010 93%,#000);
@@ -26,7 +28,9 @@ body.auth_register {
   background: linear-gradient(to top left,#4cddff,#3b9aca 10%,#2d6ca5 20%,#2a5291 27%,#283d81 35%,#222654 50%,#1e1635 63%,#0c0010 93%,#000);
 }
 
-body.auth_reset {
+body.auth_reset,
+body.auth_resetPassword,
+body.auth_resetSuccess {
   background: #0e153a;
   background-image: -webkit-radial-gradient(circle farthest-side at right bottom,#f8cdda,#1d2b64 80%,#0e153a);
   background-image: -moz-radial-gradient(circle farthest-side at right bottom,#f8cdda,#1d2b64 80%,#0e153a);
@@ -152,6 +156,7 @@ body.auth_reset {
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
+  display: block;
 
   -webkit-box-shadow: inset 0 1px 1px #77bdf4,0 2px 2px -1px rgba(0,0,0,0.2);
   -moz-box-shadow: inset 0 1px 1px #77bdf4,0 2px 2px -1px rgba(0,0,0,0.2);
