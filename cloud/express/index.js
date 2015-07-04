@@ -9,7 +9,8 @@ Parse.Cloud.useMasterKey()
 // Routes
 var routes = {
   core: require("cloud/express/routes/index"),
-  auth: require("cloud/express/routes/auth")
+  auth: require("cloud/express/routes/auth"),
+  dashboard: require("cloud/express/routes/dashboard")
 }
 
 // Global app configuration section
@@ -95,9 +96,9 @@ app.use(function(req, res, next) {
 app.get('/', routes.core.home)
 
 // Auth
-app.get('/login', routes.auth.login)
+app.get('/login', routes.auth.loggedIn, routes.auth.login)
 app.get('/logout', routes.auth.logout)
-app.get('/register', routes.auth.register)
+app.get('/register', routes.auth.loggedIn, routes.auth.register)
 app.get('/reset', routes.auth.reset)
 app.get('/reset/password', routes.auth.resetPassword)
 app.get('/reset/success', routes.auth.resetSuccess)
@@ -107,6 +108,9 @@ app.get('/auth/expired', routes.auth.expired)
 app.post('/login', routes.auth.loginUser)
 app.post('/register', routes.auth.registerUser)
 app.post('/reset', routes.auth.resetUser)
+
+// Dashboard
+app.get('/dashboard', routes.auth.restricted, routes.dashboard.home)
 
 // Terms & Privacy
 app.get('/terms', routes.core.terms)

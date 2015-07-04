@@ -21,6 +21,14 @@ module.exports.restricted = function(req, res, next) {
 	}
 }
 
+module.exports.loggedIn = function(req, res, next) {
+	if(req.session.user) {
+  	return res.redirect("/dashboard")
+	}
+
+	next()
+}
+
 module.exports.login = function(req, res) {
   res.renderT('auth/login', {
     next: req.param("next"),
@@ -87,7 +95,8 @@ module.exports.loginUser = function(req, res) {
 
   	  req.session.user = {
     	  id: user.id,
-    	  email: user.get("email")
+    	  email: user.get("email"),
+    	  name: user.get("name")
   	  }
 
   	  res.successT({
@@ -104,14 +113,11 @@ module.exports.loginUser = function(req, res) {
 }
 
 module.exports.registerUser = function(req, res) {
-  if(req.param("password") != req.param("password_confirm")) {
-    return res.errorT("Passwords Don't Match :(")
-  }
-
   var user = new User()
   user.set("username", req.param("email"))
   user.set("password", req.param("password"))
   user.set("email", req.param("email"))
+  user.set("name", req.param("name"))
 
   user.signUp(null, {
     success: function(user) {
@@ -119,7 +125,11 @@ module.exports.registerUser = function(req, res) {
     	  return res.errorT("Something Went Wrong :(")
   	  }
 
-  	  req.session.userID = user.id
+  	  req.session.user = {
+    	  id: user.id,
+    	  email: user.get("email"),
+    	  name: user.get("name")
+  	  }
 
   	  res.successT({
         user: user.id,
