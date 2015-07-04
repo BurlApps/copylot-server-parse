@@ -124,10 +124,6 @@ body.auth_resetSuccess {
   border-bottom: solid 1px #b7b7b7;
 }
 
-.container .modal .input:first-child {
-  margin-top: 0;
-}
-
 .container .modal .remember,
 .container .modal .forgot {
   padding: 5px 0;
