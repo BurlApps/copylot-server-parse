@@ -2,12 +2,16 @@
 <div class="container">
   <a href="/" class="logo"><%= siteName %></a>
   <div class="modal">
-    <div class="message">Let's Go Dynamic!</div>
+    <div class="message">Create Your Account!</div>
+    <div class="submessage">
+      Please enter a secure alphanumeric password<br>
+      that is at least 6 characters long.
+    </div>
     <form action="/register">
       <input type="hidden" name="_csrf" value="<%= csrf %>">
       <input type="text" class="input" name="email" placeholder="Email" step="1" autofocus required>
-      <input type="password" class="input" name="password" placeholder="Password" step="2" required>
-      <input type="password" class="input" name="password_confirm" placeholder="Confirm Password" step="3" required>
+      <input type="password" class="input" name="password" placeholder="Password" pattern=".{6,}" step="2" required>
+      <input type="password" class="input" name="password_confirm" placeholder="Confirm Password" pattern=".{6,}" step="3" required>
       <input type="submit" class="button" value="Create Account!">
     </form>
   </div>
