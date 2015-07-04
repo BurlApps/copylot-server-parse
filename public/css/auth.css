@@ -51,7 +51,12 @@ body.auth_resetSuccess {
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
   font-size: 36px;
   font-weight: 900;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container .logo:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .container .modal {
