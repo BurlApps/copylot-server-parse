@@ -79,3 +79,32 @@ input, select, textarea {
   -o-box-shadow: none;
   box-shadow: none;
 }
+
+.footer {
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
