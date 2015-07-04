@@ -96,6 +96,7 @@ app.get('/', routes.core.home)
 
 // Auth
 app.get('/login', routes.auth.login)
+app.get('/logout', routes.auth.logout)
 app.get('/register', routes.auth.register)
 app.get('/reset', routes.auth.reset)
 app.get('/reset/password', routes.auth.resetPassword)

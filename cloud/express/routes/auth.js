@@ -2,10 +2,10 @@ var User = Parse.User
 var Settings = require("cloud/utils/settings")
 
 module.exports.restricted = function(req, res, next) {
-	if(req.session.userID) {
+	if(req.session.user) {
   	var user = new User()
 
-  	user.id = req.session.userID
+  	user.id = req.session.user.id
   	user.fetch().then(function() {
     	req.user = user
       next()
@@ -43,7 +43,7 @@ module.exports.reset = function(req, res) {
 
 module.exports.resetPassword = function(req, res) {
   if(req.param("token") == null) {
-    //return res.redirect("/")
+    return res.redirect("/")
   }
 
   res.renderT('auth/resetPassword', {
@@ -77,13 +77,16 @@ module.exports.loginUser = function(req, res) {
   	  }
 
       if(req.param("remember") == "true") {
-        res.cookie('remember', req.param("email"), {
+        res.cookie('remember', user.get("email"), {
           maxAge: 900000,
           httpOnly: 604800000
         })
       }
 
-  	  req.session.userID = user.id
+  	  req.session.user = {
+    	  id: user.id,
+    	  email: user.get("email")
+  	  }
 
   	  res.successT({
         user: user.id,
