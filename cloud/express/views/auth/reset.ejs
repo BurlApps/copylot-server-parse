@@ -1,0 +1,20 @@
+<% include ../includes/start.ejs %>
+<div class="container">
+  <div class="logo"><%= siteName %></div>
+  <div class="modal">
+    <div class="message">Reset Your Password</div>
+    <div class="submessage">
+      Enter your email address below and we'll<br>
+      send you a link to reset your password.
+    </div>
+    <form action="/login">
+      <input type="text" class="input" name="email" placeholder="Email" step="1" autofocus required>
+      <input type="submit" class="button" value="Send Email">
+    </form>
+  </div>
+  <div class="bottom-text">
+    Remember your password?
+    <a href="/login">Sign In</a>
+  </div>
+</div>
+<% include ../includes/end.ejs %>

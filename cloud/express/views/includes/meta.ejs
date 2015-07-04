@@ -1,14 +1,24 @@
 <%
-title = "Hot Copy"
+title = "CoPylot"
 titleOG = null
-siteName = "Hot Copy"
+siteName = "CoPylot"
 visible = true
 description = [
 
 ].join("")
 
-if(template == "home/index") {
-	title = "Hot Copy"
+switch(template) {
+  case "auth/login":
+    title = "Login"
+    break
+
+  case "auth/register":
+    title = "Register"
+    break
+
+  case "auth/reset":
+    title = "Reset Your Password"
+    break
 }
 
 titleOG = titleOG || title

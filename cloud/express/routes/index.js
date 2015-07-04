@@ -1,7 +1,8 @@
 var Settings = require("cloud/utils/settings")
 
 module.exports.home = function(req, res) {
-  res.renderT('home/index')
+  //res.renderT('home/index')
+  res.redirect("/login")
 }
 
 module.exports.notfound = function(req, res) {

@@ -94,10 +94,13 @@ app.use(function(req, res, next) {
 // Landing
 app.get('/', routes.core.home)
 
-// Terms
-app.get('/terms', routes.core.terms)
+// Auth
+app.get('/login', routes.auth.login)
+app.get('/register', routes.auth.register)
+app.get('/reset', routes.auth.reset)
 
-// Privacy
+// Terms & Privacy
+app.get('/terms', routes.core.terms)
 app.get('/privacy', routes.core.privacy)
 
 // Robots

@@ -27,3 +27,7 @@ module.exports.logout = function(req, res) {
 module.exports.register = function(req, res) {
   res.renderT('auth/register')
 }
+
+module.exports.reset = function(req, res) {
+  res.renderT('auth/reset')
+}

@@ -19,10 +19,6 @@ mixpanel.init("<%= mixpanelToken %>");
     "User Name": <%- user.name ? ('"' + user.name + '"') : null %>
   });
 <% } %>
-mixpanel.track('Web.Page.View', {
-    'Name' : config.title,
-    'URL' : window.location.pathname
-})
 </script>
 <!-- end Mixpanel -->
 

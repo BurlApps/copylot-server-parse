@@ -1,0 +1,23 @@
+<% include ../includes/start.ejs %>
+<div class="container">
+  <div class="logo"><%= siteName %></div>
+  <div class="modal">
+    <div class="message">Let's Get Workin!</div>
+    <form action="/login">
+      <input type="text" class="input" name="email" placeholder="Email" step="1" autofocus required>
+      <input type="password" class="input" name="password" placeholder="Password" step="2" required>
+      <label class="remember">
+        <input type="checkbox" class="checkbox" name="remember" value="true" checked="checked">
+        Remember Me
+      </label>
+      <a class="forgot" href="/reset">Forgot your password?</a>
+      <div class="clear"></div>
+      <input type="submit" class="button" value="Sign In!">
+    </form>
+  </div>
+  <div class="bottom-text">
+    Don't have an account?
+    <a href="/register">Sign Up</a>
+  </div>
+</div>
+<% include ../includes/end.ejs %>
