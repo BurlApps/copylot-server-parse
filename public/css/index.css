@@ -34,11 +34,6 @@ body * {
   z-index: 0;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-}
-
 .background.home {
   background-color: #52418f;
   background-color: rgba(82,65,143,0.97);
@@ -118,6 +113,12 @@ body * {
   background-image: radial-gradient(circle farthest-side at right bottom,#f8cdda,#1d2b64 80%,#0e153a);
 }
 
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
 .clear {
   float: none;
   clear: both;
@@ -165,7 +166,7 @@ input, select, textarea {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   outline: none;
   border: none;
-  margin: 2px 0px;
+  margin: 0;
 
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
