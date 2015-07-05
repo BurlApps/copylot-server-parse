@@ -2,58 +2,8 @@
 <div class="container">
   <% include ./header.ejs %>
   <div class="modal">
-    <div class="sidebar">
-      <div class="header">
-        <div class="project">Night Owl</div>
-        <div class="arrow fa fa-chevron-down"></div>
-        <div class="clear"></div>
-      </div>
-      <div class="navigation">
-        <div class="header">Platforms</div>
-        <a class="item fa fa-globe active" href="/dashboard/123/global">Global</a>
-        <a class="item fa fa-apple" href="/dashboard/123/ios">iOS</a>
-        <a class="item fa fa-android" href="/dashboard/123/android">Android</a>
-      </div>
-    </div>
-    <div class="content">
-      <div class="header">
-        <div class="back-button fa fa-chevron-left"></div>
-        <div class="new-button fa fa-plus"></div>
-        <div class="search-box">
-          <div class="icon fa fa-search"></div>
-          <input class="search input" type="text" placeholder="Search for a pylot by title, tags..."/>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <td>Title</td>
-            <td>Dynamic Text</td>
-            <td>Variables</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Login Button</td>
-            <td>Login With Facebook</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Welcome Prompt</td>
-            <td>
-              Welcome to Night Owl! Your first couple questions are free,
-              then it is <span style="background: #e64040">99 cents</span> after. You also get
-              <span style="background: #f6710b">2</span> per referral!
-            </td>
-            <td>
-              <span style="background: #e64040">price</span>
-              <span style="background: #f6710b">referral</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <% include ./sidebar.ejs %>
+    <% include ./content.ejs %>
     <div class="shadow-top"></div>
     <div class="shadow-bottom"></div>
   </div>

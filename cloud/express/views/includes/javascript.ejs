@@ -13,11 +13,13 @@ mixpanel.init("<%= mixpanelToken %>");
   mixpanel.identify("<%= user.id %>")
   mixpanel.people.set({
     "ID": "<%= user.id %>",
-    "$email": <%- user.email ? ('"' + user.email + '"') : null %>
+    "$name": <%- user.get("name") ? ('"' + user.get("name") + '"') : "null" %>,
+    "$email": <%- user.get("email") ? ('"' + user.get("email") + '"') : "null" %>
   })
   mixpanel.register({
     "User ID": "<%= user.id %>",
-    "User Email": <%- user.email ? ('"' + user.email + '"') : null %>
+    "User Name": <%- user.get("name") ? ('"' + user.get("name") + '"') : "null" %>,
+    "User Email": <%- user.get("email") ? ('"' + user.get("email") + '"') : "null" %>
   });
 <% } %>
 

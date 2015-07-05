@@ -437,16 +437,16 @@
   color: #5c6680;
 }
 
-.container .modal .content > .data-table thead td:nth-child(1) {
+.container .modal .content > .data-table td:nth-child(1) {
   width: 20%;
   cursor: pointer;
 }
 
-.container .modal .content > .data-table thead td:nth-child(2) {
+.container .modal .content > .data-table td:nth-child(2) {
   width: 50%;
 }
 
-.container .modal .content > .data-table thead td:nth-child(3) {
+.container .modal .content > .data-table td:nth-child(3) {
   width: 30%;
 }
 
@@ -457,7 +457,7 @@
 }
 
 .container .modal .content > .data-table tbody td span {
-  padding: 5px 7px;
+  padding: 4px 6px;
   color: #fff;
   font-size: 10px;
   font-weight: bold;

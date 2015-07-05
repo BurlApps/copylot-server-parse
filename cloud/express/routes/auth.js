@@ -5,9 +5,10 @@ module.exports.restricted = function(req, res, next) {
 	if(req.session.user) {
   	var user = new User()
 
-  	user.id = req.session.user.id
-  	user.fetch().then(function() {
+  	user.id = req.session.user
+  	user.fetch().then(function(user) {
     	req.user = user
+    	res.locals.user = user
       next()
   	}, function() {
     	req.session = null
@@ -93,11 +94,7 @@ module.exports.loginUser = function(req, res) {
         res.clearCookie('remember')
       }
 
-  	  req.session.user = {
-    	  id: user.id,
-    	  email: user.get("email"),
-    	  name: user.get("name")
-  	  }
+  	  req.session.user = user.id
 
   	  res.successT({
         user: user.id,
@@ -125,11 +122,7 @@ module.exports.registerUser = function(req, res) {
     	  return res.errorT("Something Went Wrong :(")
   	  }
 
-  	  req.session.user = {
-    	  id: user.id,
-    	  email: user.get("email"),
-    	  name: user.get("name")
-  	  }
+  	  req.session.user = user.id
 
   	  res.successT({
         user: user.id,

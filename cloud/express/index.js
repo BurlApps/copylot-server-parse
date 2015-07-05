@@ -58,8 +58,6 @@ app.use(function(req, res, next) {
   res.renderT = function(template, data) {
     data = data || {}
     data.template = data.template || template
-    data.user = data.user || req.session.user
-    data.tutor = data.tutor || req.session.tutor
     res.render(template, data)
   }
 
@@ -70,7 +68,7 @@ app.use(function(req, res, next) {
   // Locals
   res.locals.host = req.session.host || ("http://" + req.host)
   res.locals.url = res.locals.host + req.url
-  res.locals.user = req.session.user
+  res.locals.user = null
   res.locals.mixpanelToken = req.session.mixpanelToken
   res.locals.random = random
   res.locals.config = {}
