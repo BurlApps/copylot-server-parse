@@ -4,6 +4,20 @@
   margin: 15px auto 0;
 }
 
+/* Container Banner */
+.container > .banner {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  color: #ff8181;
+  font-weight: bold;
+  display: block;
+}
+
 /* Container Header */
 .container > .header {
   margin-bottom: 15px;

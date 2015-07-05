@@ -1,4 +1,6 @@
-
+<% if(!user.get("emailVerified")) { %>
+  <div class="banner">Please check your inbox for a verification email</div>
+<% } %>
 <div class="header">
   <a href="/dashboard" class="logo"><%= siteName %></a>
   <div class="profile">
