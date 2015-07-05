@@ -4,4 +4,5 @@
 		<% include meta.ejs %>
 		<% include css.ejs %>
 	</head>
-	<body class="<%= template.replace(/\//g, "_") %>">
+	<body>
+    <div class="background <%= template.replace(/\//g, "_") %> <%= template.split("/")[0] %>"></div>
