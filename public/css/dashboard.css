@@ -1,6 +1,6 @@
 /* Container */
 .container {
-  width: 1000px;
+  width: 1050px;
   margin: 15px auto 0;
 }
 
@@ -215,7 +215,7 @@
 
 .container .modal .sidebar > .header {
   background: #3fa9e5;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 1px #3897CD;
   padding: 12px 15px;
   cursor: pointer;
   height: 50px;
@@ -294,10 +294,10 @@
   text-shadow: 0 1px rgba(0, 0, 0, 0.2);
 }
 
-/* Container Modal Content Header */
+/* Container Modal Content */
 .container .modal .content {
   position: relative;
-  width: 820px;
+  width: 870px;
   min-height: 500px;
   float: right;
 
@@ -308,6 +308,7 @@
   box-shadow: -1px 0 0 #bfcfd9;
 }
 
+/* Container Modal Content Header */
 .container .modal .content > .header {
   background: #F6F8FA;
   border-bottom: solid 1px #bfcfd9;
@@ -319,6 +320,12 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
+
+  -webkit-box-shadow: -1px 0 0 #3897CD;
+  -moz-box-shadow: -1px 0 0 #3897CD;
+  -ms-box-shadow: -1px 0 0 #3897CD;
+  -o-box-shadow: -1px 0 0 #3897CD;
+  box-shadow: -1px 0 0 #3897CD;
 }
 
 .container .modal .content > .header .back-button {

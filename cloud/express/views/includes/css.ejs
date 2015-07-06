@@ -9,7 +9,10 @@
 <% } else if(template == "home/notfound") { %>
 	<link rel="stylesheet" href="/css/notfound.css?r=<%= random %>">
 <% } else if(template.split("/")[0] == "auth") { %>
-  <link rel="stylesheet" href="/css/auth.css?r=<%= random %>">
-<% } else if(template.split("/")[0] == "dashboard") { %>
+  <link rel="stylesheet" href="/css/modal.css?r=<%= random %>">
+<% } else if(template == "dashboard/index") { %>
+  <link rel="stylesheet" href="/css/redactor.css?r=<%= random %>">
   <link rel="stylesheet" href="/css/dashboard.css?r=<%= random %>">
+<% } else if(template == "dashboard/newProject") { %>
+  <link rel="stylesheet" href="/css/modal.css?r=<%= random %>">
 <% } %>

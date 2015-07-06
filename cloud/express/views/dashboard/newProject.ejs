@@ -1,0 +1,18 @@
+<% include ../includes/start.ejs %>
+<div class="container">
+  <a href="/" class="logo"><%= siteName %></a>
+  <div class="modal">
+    <div class="message">Create A New Project</div>
+    <div class="submessage">
+      Give your project a fun name that<br>
+      your team can remember.
+    </div>
+    <form action="/projects/new">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <input type="text" class="input" name="name" placeholder="Name" step="1" autofocus required>
+      <input type="submit" class="button" value="Create Project!">
+    </form>
+  </div>
+</div>
+<% include ../includes/footer.ejs %>
+<% include ../includes/end.ejs %>

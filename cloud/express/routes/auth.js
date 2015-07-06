@@ -24,7 +24,7 @@ module.exports.restricted = function(req, res, next) {
 
 module.exports.loggedIn = function(req, res, next) {
 	if(req.session.user) {
-  	return res.redirect("/dashboard")
+  	return res.redirect("/projects")
 	}
 
 	next()
@@ -78,7 +78,7 @@ module.exports.expired = function(req, res) {
   res.renderT('auth/expired')
 }
 
-module.exports.loginUser = function(req, res) {
+module.exports.loginPOST = function(req, res) {
   Parse.User.logIn(req.param("email"), req.param("password"), {
 	  success: function(user) {
   	  if(!user) {
@@ -100,7 +100,7 @@ module.exports.loginUser = function(req, res) {
         user: user.id,
         name: user.get("name"),
         email: user.get("email"),
-		  	next: req.param("next") || "/dashboard"
+		  	next: req.param("next") || "/projects"
 	  	})
 	  },
 	  error: function(user, error) {
@@ -109,7 +109,7 @@ module.exports.loginUser = function(req, res) {
 	})
 }
 
-module.exports.registerUser = function(req, res) {
+module.exports.registerPOST = function(req, res) {
   var user = new User()
   user.set("username", req.param("email"))
   user.set("password", req.param("password"))
@@ -128,7 +128,7 @@ module.exports.registerUser = function(req, res) {
         user: user.id,
         name: user.get("name"),
         email: user.get("email"),
-		  	next: req.param("next") || "/dashboard"
+		  	next: req.param("next") || "/projects"
 	  	})
 	  },
 	  error: function(user, error) {
@@ -143,7 +143,7 @@ module.exports.registerUser = function(req, res) {
   })
 }
 
-module.exports.resetUser = function(req, res) {
+module.exports.resetPOST = function(req, res) {
   Parse.User.requestPasswordReset(req.param("email"), {
     success: function() {
       res.successT({

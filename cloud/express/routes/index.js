@@ -2,7 +2,7 @@ var Settings = require("cloud/utils/settings")
 
 module.exports.home = function(req, res) {
   //res.renderT('home/index')
-  res.redirect("/dashboard")
+  res.redirect("/projects")
 }
 
 module.exports.notfound = function(req, res) {

@@ -103,12 +103,13 @@ app.get('/reset/success', routes.auth.resetSuccess)
 app.get('/email/success', routes.auth.emailSuccess)
 app.get('/auth/router', routes.auth.authRouter)
 app.get('/auth/expired', routes.auth.expired)
-app.post('/login', routes.auth.loginUser)
-app.post('/register', routes.auth.registerUser)
-app.post('/reset', routes.auth.resetUser)
+app.post('/login', routes.auth.loginPOST)
+app.post('/register', routes.auth.registerPOST)
+app.post('/reset', routes.auth.resetPOST)
 
 // Dashboard
-app.get('/dashboard', routes.auth.restricted, routes.dashboard.home)
+app.get('/projects', routes.auth.restricted, routes.dashboard.home)
+app.get('/projects/new', routes.auth.restricted, routes.dashboard.new)
 
 // Terms & Privacy
 app.get('/terms', routes.core.terms)
